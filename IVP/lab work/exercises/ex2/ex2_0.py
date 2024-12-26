@@ -24,7 +24,7 @@ for i in range(h * 2):
         dy = y - y1
 
         top = (1 - dx) * img[x1, y1] + dx * img[x2, y1]
-        bottom = (1 -dx) * img[x1, y2] + dx * img[x2, y2]
+        bottom = (1 - dx) * img[x1, y2] + dx * img[x2, y2]
 
         new_pixel = (1 - dy) * top + dy * bottom
 
