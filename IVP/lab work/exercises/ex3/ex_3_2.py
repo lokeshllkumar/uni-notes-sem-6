@@ -3,7 +3,7 @@ import numpy as np
 
 # study on spatial resolution: convert a 512 * 512 img into a 256 * 256, 128 * 128, 64 * 64, and 32 * 32 img
 
-img = cv2.imread("ex3/test_512.png")
+img = cv2.imread("IVP/lab work/exercises/ex3/test_512.png")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 def resize(img, new_height, new_width):

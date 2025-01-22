@@ -10,7 +10,7 @@ pose = mp_pose.Pose(min_detection_confidence = 0.5, min_tracking_confidence = 0.
 stat = str()
 ac = t_ac = 0
 ac_list = [] 
-cap = cv.VideoCapture("ex2/test.mp4") 
+cap = cv.VideoCapture(0) 
 
 cap.set(cv.CAP_PROP_FRAME_WIDTH, 1920) 
 cap.set(cv.CAP_PROP_FRAME_HEIGHT, 1080)
@@ -49,9 +49,3 @@ while True:
         break
 cap.release()
 cv.destroyAllWindows()
-
-plt.plot(ac_list)
-plt.title('ACCURACY GRAPH')
-plt.xlabel('FRAME')
-plt.ylabel('ACCURACY')
-plt.show()

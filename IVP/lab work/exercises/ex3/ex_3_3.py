@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("ex3/test_128.png")
+img = cv2.imread("IVP/lab work/exercises/ex3/test_128.jpeg")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # implementing nearest neighbour interpolation

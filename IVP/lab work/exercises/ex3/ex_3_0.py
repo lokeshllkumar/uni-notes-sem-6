@@ -3,7 +3,7 @@ import numpy as np
 
 # converting RGB -> grayscale using GSi = 0.299Ri + 0.587Gi + 0.114Bi
 
-img = cv2.imread("ex3/test.jpeg")
+img = cv2.imread("IVP/lab work/exercises/ex3/test.jpeg")
 
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 

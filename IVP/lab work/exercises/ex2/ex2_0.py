@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv2.imread("ex2/test.jpeg", 1)
+img = cv2.imread("IVP/lab work/exercises/ex2/test.jpeg", 1)
 
 # objective: to double the image i.e. increase the image size by 2 times
 
