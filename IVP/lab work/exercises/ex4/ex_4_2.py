@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("ex4/test.jpeg")
+img = cv2.imread("IVP/lab work/exercises/ex4/test.jpeg")
 
 def generate_motion_blur_kernel(kernel_size, direction = "horizontal"):
     kernel = np.zeros((kernel_size, kernel_size))

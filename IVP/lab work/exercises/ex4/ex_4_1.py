@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # simulating a defocus blur usign a circular kernel
 
-img = cv2.imread("ex4/test.jpeg")
+img = cv2.imread("IVP/lab work/exercises/ex4/test.jpeg")
 
 def generate_circular_kernel(kernel_size):
     kernel = np.zeros((kernel_size, kernel_size), dtype = np.float32)

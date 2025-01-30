@@ -2,7 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-img = cv2.imread("ex4/test.jpeg")
+img = cv2.imread("IVP/lab work/exercises/ex4/test.jpeg")
 
 # applying box kernels of varying dimension
 kernel_sizes = [3, 5, 7, 9]

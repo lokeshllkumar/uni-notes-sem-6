@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("ex4/test.jpeg")
+img = cv2.imread("IVP/lab work/exercises/ex4/test.jpeg")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # a demonstration of convolution vs correlation
