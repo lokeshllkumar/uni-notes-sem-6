@@ -107,3 +107,111 @@
 
 - domain name system
 - translates domain names to IP addresses so that browsers can load Internet resources
+- working
+    - translation b/w domain name typed in browser and IP address of server containing the required webpage
+    - H/W involved
+        - DNS recursor
+            - receives queries from clients via apps like web browsers
+            - makes additional requests
+        - root nameserver
+            - first step in translation
+            - reference for more specific locations
+        - TLD(top level domain) nameserver
+            - hosts the last portion of the hostname
+        - authoritative nameserver
+            - if it has access to the requested record, returns IP address back to DNS recursor
+    - series of recursive requests until it reaches authoritative nameserver until it obtaines the requested record
+    - a workaround to making multiple requests is caching - data persistence process that helps short-circuit necessary requests by serving requested resource record earlier in the lookup
+![alt text](image.png)
+
+## AWS
+
+### AWS Region
+
+- a cluster of data centers ina  specific geo area
+- choose one close to users to reduce latency
+- has multiple AZs(availability zones)
+    - each AZ restricted to a region; can use multiple AZs within a region; can't use same AZ across regions
+
+### AWS Availability Zone
+
+- standalone data center/cluster in a region
+- operate independently
+- multiple AZs used to increase redundancy and reliability for disaster recovery
+- 
+
+> AWS local zones are extensions of regions, letting you choose more specific geo locations
+
+### EC2 (Elastic Cloud Compute)
+
+- cloud computing service
+- deploy apps without worrying about underlying infra
+- configured securely using VPC, subnets and sec groups
+- can scale config by attaching autoscaling group to instance
+- use cases
+    - deploying application
+    - scaling application
+    - hybrid-cloud env - deploy app on cloud and connect to database on-premises
+    - cost-effective
+- instance types
+    - general purpose
+    - compute optimized
+    - memory optimized
+    - storage optimized
+    - accelerated computing
+
+### Route 53
+
+- highly scalable and available DNS
+- allows routing of users to web apps in a highly efficient manner
+- only takes a few mins to reroute a domain to a new IP address
+- working
+    - URL entered in browser
+    - req routed to user's DNS resolver
+        - req forwarded to TLD name server for ".com" domains for example
+    - resolver receives authoritative name server for domain - 4 Amazon Route 53 name servers that host domain's DNS zone
+    - name server looks in the DNS zone for that URL and receives IP
+    - resolver receives IP from name server and caches before returning it to the user's browser
+    - browser contacts webserver/other Amazon-hosted services using the IP address
+- benefits
+    - highly available and reliable
+    - flexible
+    - simple
+    - fast
+    - designed to intergrate with otehr AWS services
+    - secure
+    - scalable
+- routing policies
+    - simple routing
+    - failover routing
+    - latency-based routing
+    - geolocation routing
+    - weighted routing policy
+
+### VPC
+
+- virtual private cloud
+- service that enables users to launch VMs in aprotected as well as isolated virutal env defined by them
+- complete control over VPC
+- can select virtual address of private cloud and sub-constituents like subnet, subnet mask, AZ, etc.
+- can place resources and manage them
+- default VPC created during account creation
+- architecture
+    - VPC divided into subnets, connected via route tables
+    ![alt text](<Screenshot from 2025-02-09 00-50-22.png>)
+- components
+    - VPC 
+        - can lanch AWs resources in a virtual network
+        - closely mimics a network operated in your own data center
+    - subnets
+        - break network into smaller subnets to handle traffic
+        upto /16, 200 user-defined subnets
+    - route tables
+        - to specify protocol for routing traffic b/w subnets
+    - network ACLs
+        - firewall to manage inboudna dn outbound rules
+        - for each VPC there is a default NACL that can't be deleted
+    - Internet gateway(IGW)
+        - makes it possible to link the resources in the VPC to the Internet
+    - NAT
+        - enbales conn between priv subnet and the Internet
