@@ -45,7 +45,7 @@
             - non-repudiation
             - availability
 
-- security mechanism
+- security mechanisms*
     - feature desgined to detect, prevent and recover from attack
     - employs cryptographic techniques
     - types
